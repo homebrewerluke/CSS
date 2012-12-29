@@ -1,0 +1,35 @@
+// Grays
+@white:                #fff;
+@grayLightest:         darken(@white, 12.5%);
+@grayLighter:          darken(@white, 25%);
+@grayLight:            darken(@white, 37.5%);
+@gray:                 darken(@white, 50%);
+@grayDark:             darken(@white, 62.5%);
+@grayDarker:           darken(@white, 75%);
+@grayDarkest:          darken(@white, 87.5%);
+@black:                darken(@white, 100%);
+
+// Accent Colors
+@blue:                 #09c;
+@blueLight:            lighten(@blue, 2%);
+@blueDark:             darken(@blue, 10%);
+@green:                #8bbe23;
+@greenDark:            darken(@green, 20%);
+@red:                  #9d261d;
+
+// Scaffolding
+@bodyBackground:       @white;
+@textColor:            @gray;
+
+// Base Grid Variables
+@gridColumns:          12;
+@gridColumnWidth:      70px;
+@gridGutterWidth:      20px;
+@gridRowWidth:         (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
+
+// Vertical Grid
+@bottomMargin:         20px;
+
+// Fluid Grid
+@fluidGridColumnWidth: percentage(@gridColumnWidth/@gridRowWidth);
+@fluidGridGutterWidth: percentage(@gridGutterWidth/@gridRowWidth);
