@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+    <head>
+            <title>NinjaCSS - Beautifully Simple Responsive Websites</title>
+            
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+            
+            <link rel="stylesheet" type="text/css" href="css/ninja.css">
+            
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+            <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+            <![endif]-->
+    </head>
+    <body>
+        <section>
+			<div class="container">
+				<div class="grid">
+					<div class="span2 sidebar">
+						<div class="box background">
+							<ul class="no-list-style" id="docs-navigation">
+								<li><a class="active" href="#grid">Grid</a></li>
+								<li><a href="#typography">Typography</a></li>
+								<li><a href="#messages">Messages</a></li>
+								<li><a href="#buttons">Buttons</a></li>
+								<li><a href="#">Form Styles</a></li>
+								<li><a href="#extras">Extras</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="span10 main-content">
+						<a name="grid" id="grid"></a>
+						<h1 class="bold">Adaptive Grid</h1>
+						<div class="grid">
+							<div class="span12"><div class="align-center background">.span12</div></div>
+						</div>
+						<div class="grid">
+							<div class="span1"><div class="align-center background">.span1</div></div>
+							<div class="span11"><div class="align-center background">.span11</div></div>
+						</div>
+						<div class="grid">
+							<div class="span2"><div class="align-center background">.span2</div></div>
+							<div class="span10"><div class="align-center background">.span10</div></div>
+						</div>
+						<div class="grid">
+							<div class="span3"><div class="align-center background">.span3</div></div>
+							<div class="span9"><div class="align-center background">.span9</div></div>
+						</div>
+						<div class="grid">
+							<div class="span4"><div class="align-center background">.span4</div></div>
+							<div class="span8"><div class="align-center background">.span8</div></div>
+						</div>
+						<div class="grid">
+							<div class="span5"><div class="align-center background">.span5</div></div>
+							<div class="span7"><div class="align-center background">.span7</div></div>
+						</div>
+						<div class="grid">
+							<div class="span6"><div class="align-center background">.span6</div></div>
+							<div class="span6"><div class="align-center background">.span6</div></div>
+						</div>
+						<h2 class="xsmall-margin">Grid Offsets</h2>
+						<p>Grid elements can also be offset from the left edge by adding an "offsetX" class where "X" equals the amount of columns you wish to offset it by.</p>
+						<div class="grid">
+							<div class="span12"><div class="align-center background">.span12</div></div>
+						</div>
+						<div class="grid">
+							<div class="span11 offset1"><div class="align-center background">.span11.offset1</div></div>
+						</div>
+						<div class="grid">
+							<div class="span10 offset2"><div class="align-center background">.span10.offset2</div></div>
+						</div>
+						<div class="grid">
+							<div class="span9 offset3"><div class="align-center background">.span9.offset3</div></div>
+						</div>
+						<div class="grid">
+							<div class="span8 offset4"><div class="align-center background">.span8.offset4</div></div>
+						</div>
+						<div class="grid">
+							<div class="span7 offset5"><div class="align-center background">.span7.offset5</div></div>
+						</div>
+						<div class="grid">
+							<div class="span6 offset6"><div class="align-center background">.span6.offset6</div></div>
+						</div>
+						<div class="grid">
+							<div class="span5 offset7"><div class="align-center background">.span5.offset7</div></div>
+						</div>
+						<div class="grid">
+							<div class="span4 offset8"><div class="align-center background">.span4.offset8</div></div>
+						</div>
+						<div class="grid">
+							<div class="span3 offset9"><div class="align-center background">.span3.offset9</div></div>
+						</div>
+						<div class="grid">
+							<div class="span2 offset10"><div class="align-center background">.span2.offset10</div></div>
+						</div>
+						<div class="grid">
+							<div class="span1 offset11 no-margin"><div class="align-center background">.span1<br>.offset11</div></div>
+						</div>
+						<hr class="large-margin">
+						<a name="typography" id="typography"></a>
+						<h1 class="bold">Typography</h1>
+						<h2 class="xsmall-margin">Headings</h2>
+						<p>All HTML headings, h1 through h6 are available.</p>
+						<div class="box">
+							<h1>h1. Heading 1</h1>
+							<h2>h2. Heading 2</h2>
+							<h3>h3. Heading 3</h3>
+							<h4>h4. Heading 4</h4>
+							<h5>h5. Heading 5</h5>
+							<h6>h6. Heading 6</h6>
+						</div>
+						<h2 class="xsmall-margin">Body Copy</h2>
+						<p>NinjaCSS' global default font-size is <strong>14px</strong>, with a line-height of <strong>20px</strong>. <strong>&lt;p&gt;</strong> (paragraphs) receive a bottom margin equal to their line-height.</p>
+						<div class="box">
+							<h4>Example:</h4>
+							<p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+							<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+							<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+						</div>
+						<h2 class="xsmall-margin">Intro Body Copy</h2>
+						<p>Make a paragraph stand out by adding a class of ".intro".</p>
+						<div class="box">
+							<h4>Example:</h4>
+							<p class="intro">Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+							<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+							<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+						</div>
+						<h2 class="xsmall-margin">Emphasis</h2>
+						<p>To emphasize or de-emphasize text, use the following html tags:</p>
+						<div class="box">
+							<h4>Example:</h4>
+							<ul class="no-list-style">
+								<li><strong>&lt;small&gt;</strong> - For de-emphasizing inline or blocks of text, use the <small>small</small> tag.</li>
+								<li><strong>&lt;strong&gt;</strong> - For emphasizing inline or blocks of text with a heavier font-weight, use the <strong>strong</strong> tag.</li>
+								<li><strong>&lt;em&gt;</strong> - For emphasizing inline or blocks of text with italics, use the <em>em</em> tag.</li>
+							</ul>
+						</div>
+						<h2 class="xsmall-margin">Emphasis Classes</h2>
+						<p>Convey meaning throuh color with a handful of emphasis utility classes. These are great for things like validation errors.</p>
+						<div class="box">
+							<h4>Example:</h4>
+							<ul class="no-list-style">
+								<li class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</li>
+								<li class="text-primary">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</li>
+								<li class="text-warning">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</li>
+								<li class="text-error">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</li>
+								<li class="text-info">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</li>
+								<li class="text-success">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</li>
+							</ul>
+						</div>
+						<h2 class="xsmall-margin">Abbreviations</h2>
+						<p>Stylized implementation of HTML's <strong>&lt;abbr&gt;</strong> element for abbreviations and acronyms to show the expanded version on hover. Abbreviations with a <strong>title</strong> attribute have a light dotted bottom border and a help cursor on hover, providing additional context on hover.</p>
+						<div class="box">
+							<h4>Example:</h4>
+							<p>Mouse over the last word in this sentence for an example of <abbr title="abbreviation">abbr</abbr>.</p>
+						</div>
+						<h2 class="xsmall-margin">Addresses</h2>
+						<p>
+							Present contact information for the nearest ancestor or the entire body of work.<br>
+							Preserve formatting by ending all lines with &lt;br&gt;.
+						</p>
+						<div class="box">
+							<h4>Example:</h4>
+							<address>
+								<strong>MonkeyWrench</strong><br>
+								2824 E 109th Ave.<br>
+								Northglenn, CO 80233<br>
+								<abbr title="Telephone">T:</abbr> (970) 901-5253<br>
+								<abbr title="Email Address">E:</abbr> <a href="mailto:luke@monkeywrench.cc">luke@monkeywrench.cc</a>
+							</address>
+						</div>
+						<h2 class="xsmall-margin">Blockquotes</h2>
+						<p>
+							For quoting blocks of content from another source within your document. Wrap <strong>&lt;blockquote&gt;</strong> around any HTML as a quote.<br>
+							For straight quotes we recommend a <strong>&lt;p&gt;</strong><br>
+							Add <strong>&lt;small&gt;</strong> tag for identifying the source. Wrap the name of the source work in <strong>&lt;cite&gt;</strong>.
+						</p>
+						<div class="box">
+							<h4>Example:</h4>
+							<blockquote>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+								<small>Someone famous in <cite>Source Title</cite></small>
+							</blockquote>
+							<blockquote class="align-right">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+								<small>Someone famous in <cite>Source Title</cite></small>
+							</blockquote>
+						</div>
+						<hr class="large-margin">
+						<a name="messages" id="messages"></a>
+						<h1 class="bold">Messages &amp; Alerts</h1>
+						<div class="message">This is a basic message. <code>&lt;div class="message"&gt;...&lt;/div&gt;</code></div>
+						<div class="message primary">This is a primary message. <code>&lt;div class="message primary"&gt;...&lt;/div&gt;</code></div>
+						<div class="message info">This is an info message. <code>&lt;div class="message info"&gt;...&lt;/div&gt;</code></div>
+						<div class="message warning">This is a warning message. <code>&lt;div class="message warning"&gt;...&lt;/div&gt;</code></div>
+						<div class="message error">This is an error message. <code>&lt;div class="message error"&gt;...&lt;/div&gt;</code></div>
+						<div class="message success">This is a success message. <code>&lt;div class="message success"&gt;...&lt;/div&gt;</code></div>
+						<h2 class="xsmall-margin">Message Blocks</h2>
+						<p>Message blocks are coded the same way as the normal messages above, but with an added "block" class.</p>
+						<div class="block message info">
+							<h3>Heading within a message block</h3>
+							<p>This is a message block. <a href="#">Link Example</a></p>
+							<ul>
+								<li>List Item 1</li>
+								<li>List Item 2</li>
+								<li>List Item 3</li>
+								<li>List Item 4</li>
+							</ul>
+							<p>The code for this message is as follows:</p>
+							<p><code>&lt;div class="block message info"&gt;...&lt;/div&gt;</code></p>
+						</div>
+						<hr class="large-margin">
+						<a name="buttons" id="buttons"></a>
+						<h1 class="bold xsmall-margin">Buttons</h1>
+						<p>
+							Buttons can be made out of <strong>&lt;a&gt;, &lt;button&gt;, &lt;input type="button"&gt;, and &lt;input type="submit"&gt;</strong> elements by applying the "button" class to these elements.<br>
+							Examples of each are as follows:
+						</p>
+						<p>
+							<a class="button" href="#">a element</a>
+							<button class="button">button element</button>
+							<input class="button" type="button" value="input type='button'">
+							<input class="button" type="submit" value="input type='submit'">
+						</p>
+						<p>
+							<a class="button small" href="#">a element</a>
+							<button class="button small">button element</button>
+							<input class="button small" type="button" value="input type='button'">
+							<input class="button small" type="submit" value="input type='submit'">
+						</p>
+						<p>
+							<a class="button" href="#">.button</a>
+							<a class="button dark" href="#">.button.dark</a>
+							<a class="button primary" href="#">.button.primary</a>
+							<a class="button info" href="#">.button.info</a>
+							<a class="button warning" href="#">.button.warning</a>
+							<a class="button error" href="#">.button.error</a>
+							<a class="button success" href="#">.button.success</a>
+						</p>
+						<h2 class="xsmall-margin">Button Groups</h2>
+						<p>Buttons can also be grouped by wrapping them with &lt;div class="button-group button"&gt;...&lt;/div&gt;</p>
+						<p class="button-group">
+							<a class="button" href="#">button 1</a>
+							<a class="button" href="#">button 2</a>
+							<a class="button" href="#">button 3</a>
+						</p>
+						<p class="button-group">
+							<a class="button" href="#">button 1</a>
+							<a class="button dark" href="#">button 2</a>
+							<a class="button primary" href="#">button 3</a>
+							<a class="button info" href="#">button 4</a>
+							<a class="button warning" href="#">button 5</a>
+							<a class="button error" href="#">button 6</a>
+							<a class="button success" href="#">button 7</a>
+						</p>
+						<hr class="large-margin">
+						<a name="extras" id="extras"></a>
+						<h1 class="bold">Extras</h1>
+						<h2 class="xsmall-margin">Boxes</h2>
+						<p>Boxes can be quickly built by wrapping content within <strong>&lt;div class="box"&gt;...&lt;/div&gt;</strong></p>
+						<div class="grid">
+							<div class="span6">
+								<div class="box">
+									<p>This is the default box style.</p>
+								</div>
+							</div>
+							<div class="span6">
+								<div class="box background">
+									<p>This is the default box with the "background" class added.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        </section>
+		<script>
+			$(function() {
+			
+				$('#docs-navigation a').click(function(e)
+				{
+					e.preventDefault();
+					$('#docs-navigation a').removeClass('active');
+					$(this).addClass('active');
+					
+					var scroll_id = $(this).attr('href');
+					$('html,body').animate({
+						scrollTop: '+=' + $(scroll_id).offset().top + 'px'
+					}, 'fast');
+				});
+			
+			});
+		</script>
+    </body>
+</html>

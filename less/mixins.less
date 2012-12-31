@@ -13,94 +13,141 @@
 }
 
 // Messages
-.buildMessage(@startColor, @endColor) {
-	#css3 > #gradient > .vertical(@startColor, @endColor);
-	border: 1px solid darken(@endColor, 20%);
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	box-shadow: inset 0 0 1px #fff;
-	margin-bottom: 20px;
-	padding: 10px 10px 0;
-	* {
-		font-size: 13px;
-		line-height: 130%;
-		margin-bottom: 10px;
+.buildMessage(@className, @messageColor: @gray, @messageBorder: @borderWidth) {
+	.@{className} {
+		@startColor: lighten(@messageColor, 20%);
+		@endColor:   lighten(@messageColor, 10%);
+		#css3 > #gradient > .vertical(@startColor, @endColor);
+		border: @messageBorder solid darken(@endColor, 20%);
+		#css3 > .radius(@borderRadius);
+		#css3 > .boxShadow(inset 0 0 1px, @white);
+		color: darken(@messageColor, 30%);
+		margin-bottom: 20px;
+		padding: 10px 10px 8px;
+		> * {
+			color: darken(@messageColor, 30%);
+			margin-bottom: 10px;
+		}
+		a {
+			color: @blue;
+		}
+		h2,
+		h2 a {
+			font-size: 16px;
+			line-height: 100%;
+		}
 	}
-	h2,
-	h2 a {
-		font-size: 16px;
-		line-height: 100%;
+}
+.buildSecondaryMessage(@className, @messageColor: #aaa, @messageBorder: @borderWidth) {
+	.message.@{className} {
+		@startColor: lighten(@messageColor, 20%);
+		@endColor:   lighten(@messageColor, 10%);
+		#css3 > #gradient > .vertical(@startColor, @endColor);
+		border-color: darken(@endColor, 20%);
+		border-width: @messageBorder;
+		color: darken(@messageColor, 30%);
+		* {
+			color: darken(@messageColor, 30%);
+		}
 	}
 }
 
 // Buttons
-.button-group {
-	border: 1px solid darken(#398000, 10%);
-	#css3 > #radius > .single(5px);
-	margin-bottom: @bottomMargin;
-	padding-right: 2px;
-	*zoom: 1;
-	&:after,
-	&:before {
-		content: "";
-		display: table;
-		line-height: 0;
+.buttonColor(@color: @white) when (lightness(@color) >= 80%) {
+	color: @grayDarker;
+}
+.buttonColor(@color: @white) when (lightness(@color) < 80%) {
+	color: @white;
+}
+.buildButton(@className: button, @startColor: @white, @endColor: darken(@white, 12.5%), @radius: @borderRadius) {
+	.@{className} {
+		#css3 > #gradient > .vertical(@startColor, @endColor);
+		border: @borderWidth solid darken(@endColor, 10%);
+		#css3 > .radius(@radius);
+		#css3 > .boxShadow(inset 0 1px 0 0, lighten(@startColor, 10%));
+		#forms > .boxSizing(inherit);
+		.buttonColor(@startColor);
+		cursor: pointer;
+		display: inline-block;
+		font-family: @defaultFontStack;
+		font-size: @baseFontSize;
+		height: 32px;
+		line-height: 34px;
+		margin-right: 6px;
+		padding: 0 15px 2px;
+		position: relative;
+		text-shadow: 0 1px 0 @white;
 	}
-	&:after {
-		clear: both;
+	button.@{className},
+	input.@{className} {
+		top: 1px;
 	}
-	.button {
-		border: none;
-		border-radius: 0;
-		display: inline;
-		float: left;
-		margin-right: 0;
-		width: 50%;
+	.@{className}:hover {
+		background: @endColor !important;
+		transition: all 0.3s linear;
+		-moz-transition: all 0.3s linear;
+		-webkit-transition: all 0.3s linear;
 	}
-	.button:first-child {
-		border-radius: 4px 0 0 4px;
-		border-right: 1px solid darken(#398000, 10%);
+	a.@{className},
+	a.@{className}:active,
+	a.@{className}:focus,
+	a.@{className}:hover,
+	a.@{className}:visited {
+		.buttonColor(@startColor);
+		height: 34px;
+		padding-bottom: 0;
 	}
-	.button:last-child {
-		border-radius: 0 4px 4px 0;
-		border-left: 1px solid #86d921;
+	.button-group .@{className} {
+		#css3 > .radius(0px);
 		margin-right: -5px;
 	}
+	.button-group .@{className}:first-child {
+		#css3 > .radius(@radius 0 0 @radius);
+	}
+	.button-group .@{className}:last-child {
+		#css3 > .radius(0 @radius @radius 0);
+	}
 }
-.buildButton(@startColor, @endColor, @radius) {
-	#css3 > #gradient > .vertical(@startColor, @endColor);
-	border: 1px solid darken(@endColor, 10%);
-	#css3 > #radius > .single(@radius);
-	#css3 > #boxShadow > .inset(0, 1px, 0, 0, #86d921);
-	display: inline-block;
-	margin-right: 10px;
-	text-shadow: 0 1px 0 darken(@endColor, 10%);
-	span {
-		color: #fff;
-		font-size: 14px;
-		display: block;
-		height: 38px;
-		line-height: 38px;
-		padding: 0 10px;
+.buildAdditionalButton(@className: button, @startColor: @white, @endColor: darken(@white, 12.5%), @radius: @borderRadius) {
+	.button.@{className} {
+		#css3 > #gradient > .vertical(@startColor, @endColor);
+		border-color: darken(@endColor, 10%);
+		#css3 > .boxShadow(inset 0 1px 0 0, lighten(@startColor, 10%));
+		.buttonColor(@startColor);
+		text-shadow: 0 1px 0 darken(@endColor, 10%);
+	}
+	.button.@{className}:hover {
+		background: @endColor !important;
+		transition: all 0.3s linear;
+		-moz-transition: all 0.3s linear;
+		-webkit-transition: all 0.3s linear;
+	}
+	a.button.@{className},
+	a.button.@{className}:active,
+	a.button.@{className}:focus,
+	a.button.@{className}:hover,
+	a.button.@{className}:visited {
+		.buttonColor(@startColor);
 	}
 }
 
 // Forms
-.box-sizing(@boxmodel) {
-	box-sizing: @boxmodel;
-	-moz-box-sizing: @boxmodel;
-	-webkit-box-sizing: @boxmodel;
-}
-.placeholder(@color: @grayLighter) {
-	&:-moz-placeholder {
-		color: @color;
+#forms {
+	.boxSizing(@boxModel) {
+		box-sizing: @boxModel;
+		-moz-box-sizing: @boxModel;
+		-webkit-box-sizing: @boxModel;
 	}
-	&:-ms-input-placeholder {
-		color: @color;
-	}
-	&::-webkit-input-placeholder {
-		color: @color;
+	.placeholder(@color: @grayLighter) {
+		&:-moz-placeholder {
+			color: @color;
+		}
+			&:-ms-input-placeholder {
+			color: @color;
+		}
+		&::-webkit-input-placeholder {
+			color: @color;
+		}
 	}
 }
 
@@ -120,25 +167,16 @@
 		}
 	}
 	// Border Radius
-	#radius {
-		.single(@radius) {
-			border-radius: @radius;
-			-moz-border-radius: @radius;
-			-webkit-border-radius: @radius;
-		}
-		.multiple(@topLeft, @topRight, @bottomRight, @bottomLeft) {
-			border-radius: @topLeft @topRight @bottomRight @bottomLeft;
-			-moz-border-radius: @topLeft @topRight @bottomRight @bottomLeft;
-			-webkit-border-radius: @topLeft @topRight @bottomRight @bottomLeft;
-		}
+	.radius(@radius) {
+		border-radius: @radius;
+		-moz-border-radius: @radius;
+		-webkit-border-radius: @radius;
 	}
 	// Box Shadow
-	#boxShadow {
-		.inset(@leftOffset, @topOffset, @blur, @spread, @color) {
-			box-shadow: inset @leftOffset @topOffset @blur @spread @color;
-			-moz-box-shadow: inset @leftOffset @topOffset @blur @spread @color;
-			-webkit-box-shadow: inset @leftOffset @topOffset @blur @spread @color;
-		}
+	.boxShadow(@style, @color) {
+		box-shadow: @style @color;
+		-moz-box-shadow: @style @color;
+		-webkit-box-shadow: @style @color;
 	}
 }
 

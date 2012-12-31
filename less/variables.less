@@ -17,13 +17,30 @@
 @greenDark:            darken(@green, 20%);
 @red:                  #9d261d;
 
+// Emphasis Colors
+@muted:                @grayLight;
+@primary:              #04c;
+@warning:              #f89406;
+@error:                #bd362f;
+@info:                 #2f96b4;
+@success:              #51a351;
+
+// Font Styling
+@defaultFontStack:     arial, helvetica, verdana, sans-serif;
+@baseFontSize:         14px;
+@baseLineHeight:       (@baseFontSize * 1.4);
+
 // Scaffolding
 @bodyBackground:       @white;
-@textColor:            @gray;
+@textColor:            @grayDark;
+
+// Borders
+@borderWidth:          1px;
+@borderRadius:         5px;
 
 // Base Grid Variables
 @gridColumns:          12;
-@gridColumnWidth:      70px;
+@gridColumnWidth:      80px;
 @gridGutterWidth:      20px;
 @gridRowWidth:         (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
 

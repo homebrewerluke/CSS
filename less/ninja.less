@@ -23,8 +23,8 @@ html {
 body {
 	background: @white;
 	color: @textColor;
-	font: 13px/20px helvetica, arial, verdana, sans-serif;
-	font-weight: normal;
+	font: normal @baseFontSize @defaultFontStack;
+	line-height: @baseLineHeight;
 	text-align: center;
 }
 body {
@@ -50,8 +50,8 @@ section {
 .container {
 	clear: both;
 	margin: 0 auto;
-	max-width: 1000px;
-	padding: 40px 0 20px;
+	max-width: @gridRowWidth;
+	padding: 20px 0 0;
 	position: relative;
 	text-align: left;
 	*zoom: 1;
@@ -67,12 +67,15 @@ section {
 }
 
 
-/* =Floats and Clearing
+/* =Positioning, Floats, and Clearing
 -------------------------------------------------------------- */
 .clear {
 	clear: both;
 	height: 0;
 	line-height: 0;
+}
+.fixed {
+	position: fixed;
 }
 .pull-left {
 	display: inline;
@@ -84,16 +87,16 @@ section {
 }
 
 
-/* =Semi-Fluid Grid
+/* =Basic Form Styles
 -------------------------------------------------------------- */
 input,
 textarea {
 	color: @grayDark;
-	.placeholder();
+	#forms > .placeholder();
 }
 
 
-/* =Semi-Fluid Grid
+/* =Adaptive Grid
 -------------------------------------------------------------- */
 .grid {
 	width: 100%;
@@ -109,6 +112,26 @@ textarea {
 	clear: both;
 }
 .buildGrid(@fluidGridColumnWidth, @fluidGridGutterWidth);
+
+/* Margin Modifiers */
+.no-margin {
+	margin-bottom: 0 !important;
+}
+.xsmall-margin {
+	margin-bottom: (@bottomMargin / 4) !important;
+}
+.small-margin {
+	margin-bottom: (@bottomMargin / 2) !important;
+}
+.normal-margin {
+	margin-bottom: @bottomMargin !important;
+}
+.large-margin {
+	margin-bottom: (@bottomMargin * 2) !important;
+}
+.xlarge-margin {
+	margin-bottom: (@bottomMargin * 4) !important;
+}
 
 
 /* =Typography
@@ -128,6 +151,31 @@ textarea {
 }
 .align-right {
 	text-align: right !important;
+}
+
+/* Typography Modifiers */
+.bold {
+	font-weight: bold;
+}
+.intro {
+	font-size: 21px;
+	line-height: 30px;
+}
+.italic {
+	font-style: italic;
+}
+.no-list-style {
+	list-style: none;
+	margin-left: 0;
+}
+.overline {
+	text-decoration: overline;
+}
+.strike {
+	text-decoration: line-through;
+}
+.underline {
+	text-decoration: underline;
 }
 
 /* Typographic Margins */
@@ -159,6 +207,34 @@ a:visited {
 	-webkit-transition: all 0.3s linear;
 }
 
+/* abbr */
+abbr[title],
+abbr[data-original-title] {
+	border-bottom: @borderWidth dotted #999;
+	cursor: help;
+}
+
+/* blockquote */
+blockquote {
+	border-left: 5px solid @grayLightest;
+	padding: 5px 0 5px 20px;
+}
+blockquote p {
+	color: @grayDarker;
+	font-size: 16px;
+	line-height: 25px;
+	.no-margin;
+}
+blockquote small:before {
+	content: '~ ';
+}
+blockquote.align-right {
+	border-left: none;
+	border-right: 5px solid @grayLightest;
+	padding: 5px 20px 5px 0;
+	text-align: right;
+}
+
 /* h1 - h6 */
 h1,
 h2,
@@ -173,6 +249,7 @@ h6 {
 h1 {
 	font-size: 32px;
 }
+
 h2 {
 	font-size: 26px;
 }
@@ -195,6 +272,10 @@ hr {
 	color: #ccc;
 	height: 1px;
 }
+hr.large-margin {
+	.large-margin;
+	margin-top: (@bottomMargin * 2) !important;
+}
 
 /* img */
 img {
@@ -203,19 +284,100 @@ img {
 	max-width: 100%;
 }
 
-
-/* =Buttons
--------------------------------------------------------------- */
-.button {
-	.buildButton(#61b200, #398000, 5px);
+/* ol, ul */
+ol,
+ul {
+	margin-left: 20px;
 }
 
+/* emphasis */
+em {
+	color: @grayDarker;
+	font-style: italic;
+}
+small {
+	color: @gray;
+	font-size: 85%;
+}
+strong {
+	color: @grayDarker;
+	font-weight: bold;
+}
+
+/* emphasis classes */
+.text-muted {
+		color: @grayLight;
+}
+.text-primary {
+		color: @primary;
+}
+.text-warning {
+		color: @warning;
+}
+.text-error {
+		color: @error;
+}
+.text-info {
+		color: @info;
+}
+.text-success {
+		color: @success;
+}
+
+
+/* =Basic Box Styles
+-------------------------------------------------------------- */
+.background {
+	background: @grayLightest;
+	#css3 > .radius(@borderRadius);
+	padding: 10px 0;
+}
+.box.background {
+	background: lighten(@grayLightest, 10%);
+}
+.box {
+	border: @borderWidth solid @grayLightest;
+	#css3 > .radius(@borderRadius);
+	margin-bottom: @bottomMargin;
+	padding: 20px 20px 0;
+}
+
+
+/* =Buttons & Button Groups
+-------------------------------------------------------------- */
+.button-group {
+	margin-right: 11px;
+	display: inline-block;
+}
+.buildButton(button, lighten(@muted, 30%), lighten(@muted, 10%), 5px);  // Don't change the first parameter of this function call!!!
+.buildAdditionalButton(dark, darken(@muted, 20%), darken(@muted, 40%));
+.buildAdditionalButton(primary, lighten(@primary, 20%), @primary);
+.buildAdditionalButton(info, lighten(@info, 20%), @info);
+.buildAdditionalButton(success, lighten(@success, 20%), @success);
+.buildAdditionalButton(warning, lighten(@warning, 20%), @warning);
+.buildAdditionalButton(error, lighten(@error, 20%), @error);
+.button.small {
+	font-size: 12px !important;
+	height: 25px !important;
+	line-height: 26px !important;
+	padding: 0 8px 1px !important;
+}
+a.button.small {
+	height: 26px !important;
+	padding-bottom: 0 !important;
+}
 
 
 /* =Messages
 -------------------------------------------------------------- */
-.info {
-	.buildMessage(#fffbe7, #fdf4bb);
+.buildMessage(message, lighten(@muted, 10%));
+.buildSecondaryMessage(primary, @primary);
+.buildSecondaryMessage(info, @info);
+.buildSecondaryMessage(warning, @warning);
+.buildSecondaryMessage(error, @error);
+.buildSecondaryMessage(success, @success);
+.message.block {
+		padding: 10px 10px 0;
 }
 
 
