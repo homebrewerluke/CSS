@@ -10,8 +10,10 @@
             <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
             
             <link rel="stylesheet" type="text/css" href="css/ninja.css">
+            <link rel="stylesheet" type="text/css" href="css/documentation.css">
             
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+            <script src="http://flesler-plugins.googlecode.com/files/jquery.scrollTo-1.4.3.1-min.js"></script>
             <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
             <![endif]-->
@@ -27,7 +29,7 @@
 								<li><a href="#typography">Typography</a></li>
 								<li><a href="#messages">Messages</a></li>
 								<li><a href="#buttons">Buttons</a></li>
-								<li><a href="#">Form Styles</a></li>
+								<li><a href="#forms">Form Styles</a></li>
 								<li><a href="#extras">Extras</a></li>
 							</ul>
 						</div>
@@ -226,12 +228,16 @@
 							<input class="button" type="button" value="input type='button'">
 							<input class="button" type="submit" value="input type='submit'">
 						</p>
+						<h2 class="xsmall-margin">Small Buttons</h2>
+						<p>Buttons are also available in a small size by adding the "small" class to the element in addition to its button class:</p>
 						<p>
 							<a class="button small" href="#">a element</a>
 							<button class="button small">button element</button>
 							<input class="button small" type="button" value="input type='button'">
 							<input class="button small" type="submit" value="input type='submit'">
 						</p>
+						<h2 class="xsmall-margin">Button Colors</h2>
+						<p>Buttons are also available in an array of colors:</p>
 						<p>
 							<a class="button" href="#">.button</a>
 							<a class="button dark" href="#">.button.dark</a>
@@ -257,6 +263,107 @@
 							<a class="button error" href="#">button 6</a>
 							<a class="button success" href="#">button 7</a>
 						</p>
+						<h2 class="xsmall-margin">Text After Buttons</h2>
+						<p>Text after a button can be styled to match the height of the button its next to by applying the "after-button" class to the text. This works with the small buttons as well by adding the "small" class in addition to the "after-button" class:</p>
+						<p>
+							<a class="button primary" href="#">Login</a>
+							<a class="after-button error">Forgot Password?</a>
+						</p>
+						<p>
+							<a class="button primary small" href="#">Login</a>
+							<a class="after-button small error">Forgot Password?</a>
+						</p>
+						<hr class="large-margin">
+						<a name="forms" id="forms"></a>
+						<h1 class="bold">Form Styles</h1>
+						<form>
+							<fieldset>
+								<legend>Legend</legend>
+								<div class="grid">
+									<div class="span3">
+										<label>Label Name</label>
+										<div class="full-input"><input type="text" placeholder="Type Something..."></div>
+										<span class="description">Some descriptive text can go here.</span>
+									</div>
+									<div class="span3">
+										<label>Another Label</label>
+										<div class="full-input"><input type="text" placeholder="Type Something..."></div>
+										<span class="error">A validation error could also go here.</span>
+									</div>
+									<div class="span3">
+										<label>Select Box</label>
+										<div class="full-select">
+											<select>
+												<option>Select Something...</select>
+											</select>
+										</div>
+									</div>
+								</div>
+								<p>
+									<label class="checkbox"><input type="checkbox">Check me out</label>
+									<label class="radio"><input type="radio">I'm a radio button</label>
+								</p>
+							</fieldset>
+							<fieldset>
+								<legend>Field Sizing</legend>
+								<div class="grid">
+									<div class="span12 small-margin"><div class="full-input"><input type="text" placeholder="Type Something..."></div></div>
+								</div>
+								<div class="grid">
+									<div class="span11 small-margin"><div class="full-input"><input type="text" placeholder="Type Something..."></div></div>
+									<div class="span1 small-margin"><div class="full-input"><input type="text" placeholder="Type Something..."></div></div>
+								</div>
+								<div class="grid">
+									<div class="span10 small-margin"><div class="full-input"><input type="text" placeholder="Type Something..."></div></div>
+									<div class="span2 small-margin"><div class="full-input"><input type="text" placeholder="Type Something..."></div></div>
+								</div>
+								<div class="grid">
+									<div class="span9 small-margin"><div class="full-input"><input type="text" placeholder="Type Something..."></div></div>
+									<div class="span3 small-margin"><div class="full-input"><input type="text" placeholder="Type Something..."></div></div>
+								</div>
+								<div class="grid">
+									<div class="span8 small-margin"><div class="full-input"><input type="text" placeholder="Type Something..."></div></div>
+									<div class="span4 small-margin"><div class="full-input"><input type="text" placeholder="Type Something..."></div></div>
+								</div>
+								<div class="grid">
+									<div class="span7 small-margin"><div class="full-input"><input type="text" placeholder="Type Something..."></div></div>
+									<div class="span5 small-margin"><div class="full-input"><input type="text" placeholder="Type Something..."></div></div>
+								</div>
+								<div class="grid">
+									<div class="span6"><div class="full-input"><input type="text" placeholder="Type Something..."></div></div>
+									<div class="span6"><div class="full-input"><input type="text" placeholder="Type Something..."></div></div>
+								</div>
+							</fieldset>
+							<fieldset>
+								<legend>Inline Checkboxes and Radios</legend>
+								<p>Inline Checkboxes and Radios can be accomplished adding the "inline" class to the label.</p>
+								<p>
+									<label class="checkbox inline"><input type="checkbox"> Inline Checkbox 1</label>
+									<label class="checkbox inline"><input type="checkbox"> Inline Checkbox 2</label>
+									<label class="checkbox inline"><input type="checkbox"> Inline Checkbox 3</label>
+								</p>
+								<p>
+									<label class="radio inline"><input type="radio"> Inline Radio Button 1</label>
+									<label class="radio inline"><input type="radio"> Inline Radio Button 2</label>
+									<label class="radio inline"><input type="radio"> Inline Radio Button 3</label>
+								</p>
+								<p>If you would like more consistent columns with the inline radios and checkboxes, wrap them in a grid instead of adding the inline class.</p>
+								<div class="grid">
+									<div class="span2 no-margin"><label class="checkbox"><input type="checkbox"> Inline Checkbox 1</label></div>
+									<div class="span2 no-margin"><label class="checkbox"><input type="checkbox"> Inline Checkbox 2</label></div>
+									<div class="span2 no-margin"><label class="checkbox"><input type="checkbox"> Inline Checkbox 3</label></div>
+								</div>
+								<div class="grid">
+									<div class="span2"><label class="radio"><input type="radio"> Inline Radio Button 1</label></div>
+									<div class="span2"><label class="radio"><input type="radio"> Inline Radio Button 2</label></div>
+									<div class="span2"><label class="radio"><input type="radio"> Inline Radio Button 3</label></div>
+								</div>
+							</fieldset>
+							<p>
+								<input class="button primary" type="submit" value="submit">
+								<a class="after-button text-error" href="#">Reset Form</a>
+							</p>
+						</form>
 						<hr class="large-margin">
 						<a name="extras" id="extras"></a>
 						<h1 class="bold">Extras</h1>
@@ -280,7 +387,10 @@
         </section>
 		<script>
 			$(function() {
-			
+				$('.sidebar').addClass('fixed');
+				$('.main-content').addClass('offset2');
+
+				// Scroll to selected section
 				$('#docs-navigation a').click(function(e)
 				{
 					e.preventDefault();
@@ -288,9 +398,7 @@
 					$(this).addClass('active');
 					
 					var scroll_id = $(this).attr('href');
-					$('html,body').animate({
-						scrollTop: '+=' + $(scroll_id).offset().top + 'px'
-					}, 'fast');
+					$.scrollTo(scroll_id, 800);
 				});
 			
 			});

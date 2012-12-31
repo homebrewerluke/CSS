@@ -50,10 +50,10 @@ section {
 .container {
 	clear: both;
 	margin: 0 auto;
-	max-width: @gridRowWidth;
 	padding: 20px 0 0;
 	position: relative;
 	text-align: left;
+	width: @gridRowWidth;
 	*zoom: 1;
 }
 .container:after,
@@ -87,15 +87,6 @@ section {
 }
 
 
-/* =Basic Form Styles
--------------------------------------------------------------- */
-input,
-textarea {
-	color: @grayDark;
-	#forms > .placeholder();
-}
-
-
 /* =Adaptive Grid
 -------------------------------------------------------------- */
 .grid {
@@ -114,6 +105,9 @@ textarea {
 .buildGrid(@fluidGridColumnWidth, @fluidGridGutterWidth);
 
 /* Margin Modifiers */
+.negative-margin {
+	margin-bottom: -@bottomMargin !important;
+}
 .no-margin {
 	margin-bottom: 0 !important;
 }
@@ -136,48 +130,6 @@ textarea {
 
 /* =Typography
 -------------------------------------------------------------- */
-/* Text Alignment */
-.align-center {
-	text-align: center !important;
-}
-.align-inherit {
-	text-align: inherit !important;
-}
-.align-justify {
-	text-align: justify !important;
-}
-.align-left {
-	text-align: left !important;
-}
-.align-right {
-	text-align: right !important;
-}
-
-/* Typography Modifiers */
-.bold {
-	font-weight: bold;
-}
-.intro {
-	font-size: 21px;
-	line-height: 30px;
-}
-.italic {
-	font-style: italic;
-}
-.no-list-style {
-	list-style: none;
-	margin-left: 0;
-}
-.overline {
-	text-decoration: overline;
-}
-.strike {
-	text-decoration: line-through;
-}
-.underline {
-	text-decoration: underline;
-}
-
 /* Typographic Margins */
 address,
 blockquote,
@@ -324,6 +276,48 @@ strong {
 		color: @success;
 }
 
+/* Text Alignment */
+.align-center {
+	text-align: center !important;
+}
+.align-inherit {
+	text-align: inherit !important;
+}
+.align-justify {
+	text-align: justify !important;
+}
+.align-left {
+	text-align: left !important;
+}
+.align-right {
+	text-align: right !important;
+}
+
+/* Typography Modifiers */
+.bold {
+	font-weight: bold;
+}
+.intro {
+	font-size: 21px;
+	line-height: 30px;
+}
+.italic {
+	font-style: italic;
+}
+.no-list-style {
+	list-style: none;
+	margin-left: 0;
+}
+.overline {
+	text-decoration: overline;
+}
+.strike {
+	text-decoration: line-through;
+}
+.underline {
+	text-decoration: underline;
+}
+
 
 /* =Basic Box Styles
 -------------------------------------------------------------- */
@@ -340,6 +334,95 @@ strong {
 	#css3 > .radius(@borderRadius);
 	margin-bottom: @bottomMargin;
 	padding: 20px 20px 0;
+}
+
+
+/* =Form Elements
+-------------------------------------------------------------- */
+/* Element Wrappers */
+.full-input,
+.full-select,
+.full-textarea {
+	padding-right: 8px;
+}
+.full-input {
+	padding-right: 18px;
+}
+.full-select {
+	padding-right: 0;
+}
+
+/* Legend */
+legend {
+	border-bottom: @borderWidth solid @grayLightest;
+	color: @grayDarkest;
+	display: block;
+	font-size: 18px;
+	line-height: 100%;
+	.normal-margin;
+	padding-bottom: (@bottomMargin / 2);
+	width: 100%;
+}
+
+/* Labels */
+label {
+	color: @grayDarkest;
+	display: block;
+	font-size: 15px;
+	margin-bottom: 2px;
+}
+label.checkbox,
+label.radio {
+	color: @grayDark;
+	font-size: 13px;
+	input {
+		float: left;
+		margin: 3px 5px 0 0;
+	}
+}
+label.inline {
+	display: inline-block;
+	margin-right: 10px;
+}
+label.checkbox.inline,
+label.radio.inline {
+	margin-right: 20px;
+}
+
+/* Text Inputs */
+input[type="email"],
+input[type="password"],
+input[type="text"],
+select,
+textarea {
+	background: @white;
+	border: @borderWidth solid @grayLightest;
+	color: @grayDark;
+	#css3 > .radius(@borderRadius);
+	font-family: @defaultFontStack;
+	font-size: 15px;
+	display: block;
+	padding: 4px 8px;
+	width: 100%;
+	#forms >.placeholder();
+}
+select,
+textarea {
+	padding: 3px;
+}
+
+/* Description Text */
+form span.description {
+	.text-muted;
+	display: block;
+	font-style: italic;
+	margin-top: 5px;
+}
+form span.error {
+	.text-error;
+	display: block;
+	font-style: italic;
+	margin-top: 5px;
 }
 
 
@@ -366,6 +449,15 @@ a.button.small {
 	height: 26px !important;
 	padding-bottom: 0 !important;
 }
+.after-button {
+	display: inline-block;
+	line-height: 36px;
+}
+.after-button.small {
+	line-height: 28px;
+	position: relative;
+	top: 1px;
+}
 
 
 /* =Messages
@@ -378,89 +470,4 @@ a.button.small {
 .buildSecondaryMessage(success, @success);
 .message.block {
 		padding: 10px 10px 0;
-}
-
-
-/* =Media Queries - Here's where the magic happens
--------------------------------------------------------------- */
-@media (max-width: 1200px) {
-	/* Nothing Needed Here Yet */
-}
-@media (max-width: 1100px) {
-	.container {
-		max-width: 940px;
-	}
-}
-@media (max-width: 979px) {
-	.container {
-		max-width: 700px;
-	}
-	.hide-tablet {
-		display: none !important;
-	}
-	.span1,
-	.span1 + [class*="span"],
-	.tablet-full-width {
-		clear: both;
-		margin-left: 0;
-		*margin-left: 0;
-		width: 100%;
-		*width: 100%;
-	}
-	.tablet-half-width {
-		clear: none;
-		width: 48.93617021276595% !important;
-		*width: 48.88297872340425% !important;
-	}
-	.tablet-half-width:nth-child(2n+1) {
-		margin-left: 0 !important;
-		*margin-left: 0 !important;
-	}
-	
-}
-@media (max-width: 767px) {
-	.container {
-		width: 420px;
-	}
-	.hide-phone {
-		display: none !important;
-	}
-	.phone-full-width,
-	.span2,
-	.span2 + [class*="span"] {
-		clear: both;
-		margin-left: 0;
-		*margin-left: 0;
-		width: 100%;
-		*width: 100%;
-	}
-	.phone-half-width {
-		clear: none;
-		margin-left: 2.127659574468085%;
-		*margin-left: 2.074468085106383%;
-		width: 48.93617021276595%;
-		*width: 48.88297872340425%;
-	}
-	.phone-half-width:first-child {
-		margin-left: 0;
-		*margin-left: 0;
-	}
-}
-@media (max-width: 480px) {
-	.container {
-		width: 320px;
-	}
-	[class*="span"],
-	[class*="span"]:first-child {
-		clear: both !important;
-		margin-left: 0 !important;
-		*margin-left: 0 !important;
-		width: 100% !important;
-		*width: 100% !important;
-	}
-}
-@media (max-width: 320px) {
-	.container {
-		width: 280px !important;
-	}
 }

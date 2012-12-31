@@ -1,0 +1,18 @@
+/*.sidebar.fixed + .main-content {
+	margin-left: ;
+}*/
+
+.sidebar.fixed {
+	width: 180px;
+}
+.main-content.offset2 {
+	margin-left: 200px !important;
+}
+.sidebar a {
+	display: block;
+}
+.active:before {
+	content: '» ';
+	position: relative;
+	top: -1px;
+}

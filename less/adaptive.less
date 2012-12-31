@@ -1,0 +1,93 @@
+@import "variables.less";
+@import "mixins.less";
+
+/* =Basic Structure
+-------------------------------------------------------------- */
+.container {
+	max-width: @gridRowWidth;
+	width: inherit;
+}
+
+/* =Media Queries - Here's where the magic happens
+-------------------------------------------------------------- */
+@media (max-width: 1200px) {
+	/* Nothing Needed Here Yet */
+}
+@media (max-width: 1100px) {
+	.container {
+		max-width: 940px;
+	}
+}
+@media (max-width: 979px) {
+	.container {
+		max-width: 700px;
+	}
+	.hide-tablet {
+		display: none !important;
+	}
+	.span1,
+	.span1 + [class*="span"],
+	.tablet-full-width {
+		clear: both;
+		margin-left: 0;
+		*margin-left: 0;
+		width: 100%;
+		*width: 100%;
+	}
+	.tablet-half-width {
+		clear: none;
+		width: 48.93617021276595% !important;
+		*width: 48.88297872340425% !important;
+	}
+	.tablet-half-width:nth-child(2n+1) {
+		margin-left: 0 !important;
+		*margin-left: 0 !important;
+	}
+	
+}
+@media (max-width: 767px) {
+	.container {
+		width: 420px;
+	}
+	.hide-phone {
+		display: none !important;
+	}
+	.phone-full-width,
+	.span2,
+	.span2 + [class*="span"] {
+		clear: both;
+		margin-left: 0;
+		*margin-left: 0;
+		width: 100%;
+		*width: 100%;
+	}
+	.phone-half-width {
+		clear: none;
+		margin-left: 2.127659574468085%;
+		*margin-left: 2.074468085106383%;
+		width: 48.93617021276595%;
+		*width: 48.88297872340425%;
+	}
+	.phone-half-width:first-child {
+		margin-left: 0;
+		*margin-left: 0;
+	}
+}
+@media (max-width: 480px) {
+	.container {
+		width: 320px;
+	}
+	[class*="span"],
+	[class*="span"]:first-child {
+		clear: both !important;
+		margin-left: 0 !important;
+		*margin-left: 0 !important;
+		width: 100% !important;
+		*width: 100% !important;
+	}
+}
+@media (max-width: 320px) {
+	.container {
+		width: 280px !important;
+	}
+}
