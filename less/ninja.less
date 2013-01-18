@@ -126,6 +126,44 @@ section {
 .xlarge-margin {
 	margin-bottom: (@bottomMargin * 4) !important;
 }
+.no-margin-top {
+	margin-top: 0 !important;
+}
+.xsmall-margin-top {
+	margin-top: (@bottomMargin / 4) !important;
+}
+.small-margin-top {
+	margin-top: (@bottomMargin / 2) !important;
+}
+.normal-margin-top {
+	margin-top: @bottomMargin !important;
+}
+.large-margin-top {
+	margin-top: (@bottomMargin * 2) !important;
+}
+.xlarge-margin-top {
+	margin-top: (@bottomMargin * 4) !important;
+}
+
+/* Padding Modifiers */
+.no-padding {
+	padding: 0 !important;
+}
+.xsmall-padding {
+	padding: (@bottomMargin / 4) !important;
+}
+.small-padding {
+	padding: (@bottomMargin / 2) !important;
+}
+.normal-padding {
+	padding: @bottomMargin !important;
+}
+.large-padding {
+	padding: (@bottomMargin * 2) !important;
+}
+.xlarge-padding {
+	padding: (@bottomMargin * 4) !important;
+}
 
 
 /* =Typography
@@ -143,6 +181,7 @@ h6,
 hr,
 ol,
 p,
+table,
 ul {
 	margin-bottom: @bottomMargin;
 }
@@ -304,6 +343,9 @@ strong {
 .italic {
 	font-style: italic;
 }
+.nobr {
+	white-space: nowrap;
+}
 .no-list-style {
 	list-style: none;
 	margin-left: 0;
@@ -316,6 +358,23 @@ strong {
 }
 .underline {
 	text-decoration: underline;
+}
+
+/* Vertical Alignment */
+.valign-baseline {
+	vertical-align: baseline !important;
+}
+.valign-bottom {
+	vertical-align: bottom !important;
+}
+.valign-inherit {
+	vertical-align: inherit !important;
+}
+.valign-middle {
+	vertical-align: middle !important;
+}
+.valign-top {
+	vertical-align: top !important;
 }
 
 
@@ -423,6 +482,23 @@ form span.error {
 	display: block;
 	font-style: italic;
 	margin-top: 5px;
+}
+
+/* =Basic Tables
+-------------------------------------------------------------- */
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	width: 100%;
+}
+td,
+th {
+	border-bottom: 1px solid @grayLightest;
+	padding: 5px;
+}
+th {
+	color: @grayDarker;
+	font-weight: bold;
 }
 
 

@@ -291,6 +291,43 @@ section {
 .xlarge-margin {
   margin-bottom: 80px !important;
 }
+.no-margin-top {
+  margin-top: 0 !important;
+}
+.xsmall-margin-top {
+  margin-top: 5px !important;
+}
+.small-margin-top {
+  margin-top: 10px !important;
+}
+.normal-margin-top {
+  margin-top: 20px !important;
+}
+.large-margin-top {
+  margin-top: 40px !important;
+}
+.xlarge-margin-top {
+  margin-top: 80px !important;
+}
+/* Padding Modifiers */
+.no-padding {
+  padding: 0 !important;
+}
+.xsmall-padding {
+  padding: 5px !important;
+}
+.small-padding {
+  padding: 10px !important;
+}
+.normal-padding {
+  padding: 20px !important;
+}
+.large-padding {
+  padding: 40px !important;
+}
+.xlarge-padding {
+  padding: 80px !important;
+}
 /* =Typography
 -------------------------------------------------------------- */
 /* Typographic Margins */
@@ -306,6 +343,7 @@ h6,
 hr,
 ol,
 p,
+table,
 ul {
   margin-bottom: 20px;
 }
@@ -455,6 +493,9 @@ strong {
 .italic {
   font-style: italic;
 }
+.nobr {
+  white-space: nowrap;
+}
 .no-list-style {
   list-style: none;
   margin-left: 0;
@@ -467,6 +508,22 @@ strong {
 }
 .underline {
   text-decoration: underline;
+}
+/* Vertical Alignment */
+.valign-baseline {
+  vertical-align: baseline !important;
+}
+.valign-bottom {
+  vertical-align: bottom !important;
+}
+.valign-inherit {
+  vertical-align: inherit !important;
+}
+.valign-middle {
+  vertical-align: middle !important;
+}
+.valign-top {
+  vertical-align: top !important;
 }
 /* =Basic Box Styles
 -------------------------------------------------------------- */
@@ -593,6 +650,21 @@ form span.error {
   display: block;
   font-style: italic;
   margin-top: 5px;
+}
+/* =Basic Tables
+-------------------------------------------------------------- */
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+td,
+th {
+  border-bottom: 1px solid #dfdfdf;
+  padding: 5px;
+}
+th {
+  color: #404040;
+  font-weight: bold;
 }
 /* =Buttons & Button Groups
 -------------------------------------------------------------- */
